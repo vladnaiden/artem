@@ -48,7 +48,7 @@
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Главная</a>
                     </li>
                     <li>
-                        <a href="page3.html"><i class="fa fa-bar-chart-o fa-fw"></i> Розрахунок параметрыв моделы</a>
+                        <a href="page3.html"><i class="fa fa-bar-chart-o fa-fw"></i> Розрахунок параметрів моделі</a>
                     </li>
                 </ul>
             </div>
@@ -58,13 +58,13 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Оцынка конкурентносты банку</h1>
+                <h1 class="page-header">Оцінка конкурентоздатності банку</h1>
             </div>
 
         </div>
 
         <div class="row" id="checkbox">
-            <div class="col-lg-12"><h2 class="page-header">Конкурентноздатнысть послуги</h2></div>
+            <div class="col-lg-12"><h2 class="page-header">Конкурентноздатність послуги</h2></div>
 
             <div class="col-lg-12">
 
@@ -73,7 +73,7 @@
                         <div class="row">
                             <div class="col-md-4 text-left">
                                 <div class="form-group">
-                                    <label>Якысть</label>
+                                    <label>Якість</label>
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" value="1">Низька
@@ -93,7 +93,7 @@
                             </div>
                             <div class="col-md-4 text-left">
                                 <div class="form-group">
-                                    <label>Цына</label>
+                                    <label>Ціна</label>
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" value="1">Низька
@@ -113,27 +113,27 @@
                             </div>
                             <div class="col-md-4 text-left">
                                 <div class="form-group">
-                                    <label>Рывень обслуг</label>
+                                    <label>Рівень обслуговування</label>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="1">Низька
+                                            <input type="checkbox" value="1">Низький
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="2">Середня
+                                            <input type="checkbox" value="2">Середній
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="3">Висока
+                                            <input type="checkbox" value="3">Високий
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12 text-right">
-                                <button type="button" class="btn btn-primary">Submit</button>
-                                <button class="btn btn-info">Веберите значение</button>
+                                <button type="button" class="btn btn-primary">Розрахувати</button>
+                                <button class="btn btn-info">Оберіть параметри послуги</button>
                             </div>
                         </div>
                     </div>
@@ -143,15 +143,15 @@
 
         <div class="row" >
             <div class="col-lg-6">
-                <h2 class="page-header">Рывень кредитного ризику</h2>
+                <h2 class="page-header">Рівень кредитного ризику</h2>
 
                 <div class="panel panel-default" id="creditLvl">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-8 text-left">
                                 <div class="form-group">
-                                    <label>Text Input</label>
-                                    <input class="form-control"  placeholder="Введите число">
+                                    <label>R - Загальна сума резервів на можливі втрати по виданим кредитам, тис. грн</label>
+                                    <input class="form-control">
                                 </div>
                             </div>
                             <div class="col-xs-4 text-left">
@@ -163,13 +163,13 @@
                         <div class="row">
                             <div class="col-xs-8 text-left">
                                 <div class="form-group">
-                                    <label>Text Input</label>
-                                    <input class="form-control"  placeholder="Введите число">
+                                    <label>SZ – Загальна сума заборгованості по всім виданим кредитам, тис. грн</label>
+                                    <input class="form-control">
                                 </div>
                             </div>
                             <div class="col-xs-4 text-left">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-default" style="margin-top:25px">Submit
+                                    <button type="button" class="btn btn-default" style="margin-top:25px">Розрахувати
                                     </button>
                                 </div>
                             </div>
@@ -178,28 +178,28 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="page-header">Рывень кредитного ризику</h2>
+                <h2 class="page-header">Рентабельність активів</h2>
 
                 <div class="panel panel-default" id="rentActCo">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-9 text-left">
                                 <div class="form-group">
-                                    <label>Прибуток на звытну дату</label>
-                                    <input class="form-control" placeholder="Введите число">
+                                    <label>Прибуток на звітну дату</label>
+                                    <input class="form-control" placeholder="Пр(t)">
                                 </div>
                             </div>
 
                             <div class="col-xs-9 text-left">
                                 <div class="form-group">
-                                    <label>Середне значення активыв за перыод</label>
-                                    <input class="form-control" placeholder="Введите число">
+                                    <label>Cереднє значення активів за період (t0)</label>
+                                    <input class="form-control" placeholder="Асзн">
                                 </div>
                             </div>
                             <div class="col-xs-9 text-left">
                                 <div class="form-group">
-                                    <label>Кылькысть мысць в зворотный перыод</label>
-                                    <input class="form-control" placeholder="Введите число">
+                                    <label>Кількість місяців в звітному періоді</label>
+                                    <input class="form-control" placeholder="N(t)">
                                 </div>
                             </div>
                             <div class="col-xs-6 text-left">
@@ -209,7 +209,7 @@
                             </div>
                             <div class="col-xs-6 text-right">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-default" style="margin-top:25px">Submit
+                                    <button type="button" class="btn btn-default" style="margin-top:25px">Розрахувати
                                     </button>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 text-center" id="concurent">
-                <div style="padding-top:30px" ><h2>Press submit after all counts done</h2></div>
+                <div style="padding-top:30px"><h2><i>CVR = ~</i></h2></div>
                 <button type="button" class="btn btn-default" style="margin-top:25px">Submit
                 </button>
             </div>
@@ -228,69 +228,61 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Конкурентноздатнысть послуги</h1>
+                <h1 class="page-header">Рівень рентабельності</h1>
             </div>
 
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Конкурентноздатнысть послуги</h2>
+                <h2 class="page-header">Граничні показники рівня рентабельності</h2>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="font-size:16px;">
                         <div class="row">
                             <div class="col-xs-4 ">
                                 <div class="alert  text-center">
-                                    Високо
+                                    Висока
                                 </div>
                             </div>
                             <div class="col-xs-8">
                                 <div class="alert text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#"
-                                                                                                 class="alert-link">Alert
-                                    Link</a>.
+                                    РА > 2%, PK > 10%
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-4 ">
                                 <div class="alert  text-center">
-                                    Високо
+                                    Достатня
                                 </div>
                             </div>
                             <div class="col-xs-8">
                                 <div class="alert text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#"
-                                                                                                 class="alert-link">Alert
-                                    Link</a>.
+                                    1% > РА > 2%, PK > 7%
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-4 ">
                                 <div class="alert  text-center">
-                                    Високо
+                                    Низька
                                 </div>
                             </div>
                             <div class="col-xs-8">
                                 <div class="alert text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#"
-                                                                                                 class="alert-link">Alert
-                                    Link</a>.
+                                     0 > РА > 1%, PK > 0
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-4 ">
                                 <div class="alert  text-center">
-                                    Високо
+                                    Неприбуткова
                                 </div>
                             </div>
                             <div class="col-xs-8">
                                 <div class="alert text-center">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#"
-                                                                                                 class="alert-link">Alert
-                                    Link</a>.
+                                   РА < 0, PK < 0
                                 </div>
                             </div>
                         </div>
@@ -303,8 +295,8 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Конкурентноздатнысть послуги</h2>
+            <div class="col-lg-6" >
+                <h2 class="page-header">Розрахунок рентабельності</h2>
 
                 <div class="panel panel-default liStyle">
                     <div class="panel-heading">
