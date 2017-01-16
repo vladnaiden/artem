@@ -156,11 +156,5 @@ document.getElementById('saveData').addEventListener('click', function () {
 
     localStorage.setItem("params", JSON.stringify(params));
 
-
-
-
-    var result = JSON.parse(localStorage.getItem("students"));
-
-    console.log(result);
 });
 
