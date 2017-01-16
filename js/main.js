@@ -1,5 +1,9 @@
 'use strict';
+var valueSlou = 0;
+var countRentablTextNumber = 0;
+var countRentablTextWord = '';
 
+var concNumber = 0;
 (function () {
     var rentActCoText = document.getElementById('rentActCo').getElementsByClassName('rentActCoText')[0].getElementsByTagName('div')[0];
     var creditLvlText = document.getElementById('creditLvl').getElementsByClassName('creditLvlText')[0].getElementsByTagName('div')[0];
@@ -12,14 +16,13 @@
     rentActCo();
 
 
-
-    concurentButton.addEventListener('click', function(){
+    concurentButton.addEventListener('click', function () {
 
         var one = Number(rentActCoText.innerHTML.replace(/РА = /g, ''));
         var two = Number(creditLvlText.innerHTML.replace(/LCR = /g, ''));
 
-        concurent.innerHTML = one + two + checkboxNumberConclusion;
-        concurent.innerHTML = Math.round(concurent.innerHTML).toFixed(3);
+        concNumber = one + two + checkboxNumberConclusion;
+        concurent.innerHTML = concNumber.toFixed(3);
 
     });
 
@@ -30,7 +33,7 @@
         var value = 0;
 
         button.addEventListener('click', function () {
-            value = eval("((rentActCo[0].value / (rentActCo[2].value*rentActCo[1].value))*12)*0.333");
+            value = (((parseInt(rentActCo[0].value)) / ((parseInt(rentActCo[2].value)) * (parseInt(rentActCo[1].value))) * 12) * 0.333);
             rentActCoText.innerHTML = 'РА = ' + value;
 
         });
@@ -46,12 +49,9 @@
 
 
         button.addEventListener('click', function () {
-            console.log(creditLvl);
 
-            value = eval("(creditLvl[0].value / creditLvl[1].value)*0.333");
+            value = (parseInt(creditLvl[0].value) / (parseInt(creditLvl[1].value)) * 0.333);
 
-
-            console.log(value);
             creditLvlText.innerHTML = 'LCR = ' + value;
 
         });
@@ -91,4 +91,76 @@
 
 }());
 
+(function () {
+    var countRentablText = document.getElementsByClassName('countRentablText')[0].getElementsByTagName('div')[0].getElementsByTagName('h2')[0];
+    var countRentabl = [].slice.call(document.getElementById('countRentabl').getElementsByTagName('input'));
+    var btnPrimary = document.getElementById('countRentabl').getElementsByClassName('btn btn-primary')[0];
+    var pa;
+    var pk;
+
+
+    btnPrimary.addEventListener('click', function () {
+        pa = eval("(parseInt(countRentabl[0].value)/(parseInt(countRentabl[1].value)*parseInt(countRentabl[2].value)))*12").toFixed(3);
+        pk = eval("(parseInt(countRentabl[0].value)/parseInt((countRentabl[3].value)*parseInt(countRentabl[2].value)))*12").toFixed(3);
+
+        if (pa > 0.02 && pk > 0.1) {
+            countRentablText.innerHTML = "Високо";
+            countRentablTextNumber = 1;
+            countRentablTextWord = "Високо";
+        } else if ((pa > 0.01 && pa < 0.02) && pk > 0.07) {
+            countRentablText.innerHTML = "Достатньо";
+            countRentablTextNumber = 0.75;
+            countRentablTextWord = "Достатньо";
+        }
+        else if ((pa > 0 && pa < 0.01) && pk > 0) {
+            countRentablText.innerHTML = "Низько";
+            countRentablTextNumber = 0.5;
+            countRentablTextWord = "Низько";
+        }
+        else if (pa < 0 && pk < 0) {
+            countRentablText.innerHTML = "Неприбутково";
+            countRentablTextNumber = 0.25;
+            countRentablTextWord = "Неприбутково";
+        } else {
+            countRentablText.innerHTML = "Помилковы данны"
+        }
+
+
+    });
+
+
+}());
+
+(function () {
+    var slouModlText = document.getElementsByClassName('slouModlText')[0].getElementsByTagName('div')[0].getElementsByTagName('h2')[0];
+    var slouModl = [].slice.call(document.getElementById('slouModl').getElementsByTagName('input'));
+    var btnPrimary = document.getElementById('slouModl').getElementsByClassName('btn btn-primary')[0];
+
+    btnPrimary.addEventListener('click', function () {
+        valueSlou = ((parseInt(slouModl[0].value) + parseInt(slouModl[1].value)) * parseInt(slouModl[2].value)) - parseInt(slouModl[3].value) * parseInt(slouModl[6].value) - parseInt(slouModl[4].value) * parseInt(slouModl[5].value);
+        slouModlText.innerHTML = valueSlou;
+    })
+
+
+}());
+
+document.getElementById('saveData').addEventListener('click', function () {
+    var params = [];
+    var slou = {valueSlou: valueSlou};
+    var rentamble = {rentambleNumber: countRentablTextNumber, rentambleWord: countRentablTextWord};
+    var concNum = {concNumber: concNumber};
+
+    params.push(slou);
+    params.push(rentamble);
+    params.push(concNum);
+
+    localStorage.setItem("params", JSON.stringify(params));
+
+
+
+
+    var result = JSON.parse(localStorage.getItem("students"));
+
+    console.log(result);
+});
 
