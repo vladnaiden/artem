@@ -33,7 +33,7 @@ var concNumber = 0;
         var value = 0;
 
         button.addEventListener('click', function () {
-            value = (((parseInt(rentActCo[0].value)) / ((parseInt(rentActCo[2].value)) * (parseInt(rentActCo[1].value))) * 12) * 0.333);
+            value = (((parseFloat(rentActCo[0].value)) / ((parseFloat(rentActCo[2].value)) * (parseFloat(rentActCo[1].value))) * 12) * 0.333);
             rentActCoText.innerHTML = 'РА = ' + value;
 
         });
@@ -50,7 +50,7 @@ var concNumber = 0;
 
         button.addEventListener('click', function () {
 
-            value = (parseInt(creditLvl[0].value) / (parseInt(creditLvl[1].value)) * 0.333);
+            value = (parseFloat(creditLvl[0].value) / (parseFloat(creditLvl[1].value)) * 0.333);
 
             creditLvlText.innerHTML = 'LCR = ' + value;
 
@@ -100,29 +100,29 @@ var concNumber = 0;
 
 
     btnPrimary.addEventListener('click', function () {
-        pa = eval("(parseInt(countRentabl[0].value)/(parseInt(countRentabl[1].value)*parseInt(countRentabl[2].value)))*12").toFixed(3);
-        pk = eval("(parseInt(countRentabl[0].value)/parseInt((countRentabl[3].value)*parseInt(countRentabl[2].value)))*12").toFixed(3);
+        pa = eval("(parseFloat(countRentabl[0].value)/(parseFloat(countRentabl[1].value)*parseFloat(countRentabl[2].value)))*12").toFixed(3);
+        pk = eval("(parseFloat(countRentabl[0].value)/parseFloat((countRentabl[3].value)*parseFloat(countRentabl[2].value)))*12").toFixed(3);
 
         if (pa > 0.02 && pk > 0.1) {
-            countRentablText.innerHTML = "Високо";
+            countRentablText.innerHTML = "Висока";
             countRentablTextNumber = 1;
-            countRentablTextWord = "Високо";
+            countRentablTextWord = "Висока";
         } else if ((pa > 0.01 && pa < 0.02) && pk > 0.07) {
-            countRentablText.innerHTML = "Достатньо";
+            countRentablText.innerHTML = "Достатня";
             countRentablTextNumber = 0.75;
-            countRentablTextWord = "Достатньо";
+            countRentablTextWord = "Достатня";
         }
         else if ((pa > 0 && pa < 0.01) && pk > 0) {
-            countRentablText.innerHTML = "Низько";
+            countRentablText.innerHTML = "Низька";
             countRentablTextNumber = 0.5;
-            countRentablTextWord = "Низько";
+            countRentablTextWord = "Низька";
         }
         else if (pa < 0 && pk < 0) {
             countRentablText.innerHTML = "Неприбутково";
             countRentablTextNumber = 0.25;
             countRentablTextWord = "Неприбутково";
         } else {
-            countRentablText.innerHTML = "Помилковы данны"
+            countRentablText.innerHTML = "Помилкові дані"
         }
 
 
@@ -137,7 +137,7 @@ var concNumber = 0;
     var btnPrimary = document.getElementById('slouModl').getElementsByClassName('btn btn-primary')[0];
 
     btnPrimary.addEventListener('click', function () {
-        valueSlou = ((parseInt(slouModl[0].value) + parseInt(slouModl[1].value)) * parseInt(slouModl[2].value)) - parseInt(slouModl[3].value) * parseInt(slouModl[6].value) - parseInt(slouModl[4].value) * parseInt(slouModl[5].value);
+        valueSlou = ((parseFloat(slouModl[0].value) + parseFloat(slouModl[1].value)) * parseFloat(slouModl[2].value)) - parseFloat(slouModl[3].value) * parseFloat(slouModl[6].value) - parseFloat(slouModl[4].value) * parseFloat(slouModl[5].value);
         slouModlText.innerHTML = valueSlou;
     })
 
@@ -154,7 +154,7 @@ document.getElementById('saveData').addEventListener('click', function () {
     params.push(rentamble);
     params.push(concNum);
 
-    localStorage.setItem("params", JSON.stringify(params));
+     
 
 });
 
