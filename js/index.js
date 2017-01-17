@@ -4,6 +4,7 @@ var params = JSON.parse(localStorage.getItem("params"));
 
 
 var valueSlou = document.getElementById('valueSlou').innerHTML = params[0].valueSlou.toFixed(3);
+console.log(valueSlou);
 var rentambleWord = document.getElementById('rentambleWord').innerHTML = params[1].rentambleWord;
 var concNumber = document.getElementById('concNumber').innerHTML = params[2].concNumber.toFixed(3);
 

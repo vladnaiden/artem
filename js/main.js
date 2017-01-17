@@ -154,7 +154,7 @@ document.getElementById('saveData').addEventListener('click', function () {
     params.push(rentamble);
     params.push(concNum);
 
-     
+    localStorage.setItem('params', JSON.stringify(params));
 
 });
 
